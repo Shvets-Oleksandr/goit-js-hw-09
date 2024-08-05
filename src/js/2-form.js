@@ -43,14 +43,17 @@ const onFormSubmit = (event) => {
    
     if (formEl.elements.email.value === '' || formEl.elements.message.value === '') {
         alert('Fill please all fields');
+        return;
     };
 
     console.log(formData);
 
     localStorage.removeItem('feedback-form-state');
     event.target.reset();
-    formData.email = '';
-    formData.message = '';
+    formData = {
+        email: "",
+        message: ""
+    };
 
     console.log(formData);
 }
